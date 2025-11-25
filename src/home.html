@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<a href="#" data-popup="#popup" class="link">Popup</a>
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title">Заголовок спойлера</summary>
+						<div class="spollers__body">Контент спойлера</div>
+					</details>
+				</div>
+				<div data-showmore class="block">
+					<div data-showmore-content class="block__content">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi iure cumque enim, autem officiis cupiditate voluptas iste officia illo, in eligendi, ipsam obcaecati dignissimos labore delectus! Saepe, ex? Modi!
+					</div>
+					<button hidden data-showmore-button type="button" class="block__more"><span>Показати ще</span><span>Сховати</span></button>
+				</div>
+				<div data-rating="set" class="rating"></div>
+				<select name="form[]" data-class-modif="form">
+					<option value="1" selected>Пункт №1</option>
+					<option value="2">Пункт №2</option>
+					<option value="3">Пункт №3</option>
+					<option value="4">Пункт №4</option>
+				</select>
+
+				<div data-watch data-tabs class="tabs">
+					<nav data-tabs-titles class="tabs__navigation">
+						<button type="button" class="tabs__title _tab-active">Таб №1</button>
+						<button type="button" class="tabs__title">Таб №2</button>
+						<button type="button" class="tabs__title">Таб №3</button>
+					</nav>
+					<div data-tabs-body class="tabs__content">
+						<div class="tabs__body">
+							Вміст першого таба
+						</div>
+						<div class="tabs__body">
+							Вміст другого таба
+						</div>
+						<div class="tabs__body">
+							Вміст третього таба
+						</div>
+					</div>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

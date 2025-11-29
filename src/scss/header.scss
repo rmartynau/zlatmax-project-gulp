@@ -145,15 +145,35 @@
  }
  // .phones-header__item
  &__item {
+    position: relative;
+    display: flex;
  }
  // .phones-header__phone
  &__phone {
+    font-weight: 600;
+    white-space: nowrap;
+    line-height: math.div(22, 18);
  }
  // .phones-header__arrow
  &__arrow {
+    color: #E8AA31;
+    font-size: toRem(16);
+    margin: 0px 0px 0px toEm(17, 16);
  }
  // .phones-header__list
  &__list{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    border-radius: toRem(10);
+    background-color: #fff;
+    padding: toRem(15);
+    li {
+        &:not(:last-child) {
+            margin-bottom: toEm(8, 18);
+        }
+    }
  }
  // .phones-header__callback
  &__callback {

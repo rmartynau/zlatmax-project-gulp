@@ -30,13 +30,13 @@ import * as flsFunctions from "./files/functions.js";
 
 /* Перевірка підтримки webp, додавання класу webp або no-webp для HTML */
 /* (i) необхідно для коректного відображення webp із css */
-// flsFunctions.isWebp();
+flsFunctions.isWebp();
 /* Додавання класу touch для HTML якщо браузер мобільний */
 // flsFunctions.addTouchClass();
 /* Додавання loaded для HTML після повного завантаження сторінки */
 // flsFunctions.addLoadedClass();
 /* Модуль для роботи з меню (Бургер) */
-// flsFunctions.menuInit();
+flsFunctions.menuInit();
 /* Форматування чисел */
 // import './libs/wNumb.min.js';
 
@@ -45,7 +45,7 @@ import * as flsFunctions from "./files/functions.js";
 Документація: https://template.fls.guru/template-docs/modul-spojlery.html
 Сніппет (HTML): spollers
 */
-// flsFunctions.spollers();
+flsFunctions.spollers();
 
 /*
 Модуль "Таби"

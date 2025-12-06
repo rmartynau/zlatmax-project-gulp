@@ -347,14 +347,13 @@
    &__block {
     padding-bottom: toRem(30);
     display: none;
-    justify-content: space-between;
     &._sub-menu-open {
         display: flex;
     }
    }
    // .sub-menu-catalog__column
  &__column {
-  flex: 1 1 auto;
+  flex: 0 1 toRem(320);
   display: flex;
   flex-direction: column;
  }
@@ -364,7 +363,7 @@
   font-size: toRem(16);
   line-height: math.div(20, 16);
   font-weight: 700;
-  padding: toRem(30) 0;
+  padding: toRem(30) toRem(15);
   @media (any-hover: hover){
     &:hover{
        text-decoration: underline;
@@ -377,8 +376,7 @@
    display: flex;
    flex-direction: column;
    gap: 20px;
-   padding-bottom: toRem(30);
-   padding: toRem(30) toRem(10);
+   padding: toRem(30) toRem(15);
    border-top: 1px solid rgba(255, 255, 255, 0.3);
    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
  }
@@ -400,8 +398,8 @@
  &__all {
     align-self: flex-start;
     padding-top: toRem(30);
-    padding-left: toRem(10);
-   padding-right: toRem(10);
+    padding-left: toRem(15);
+   padding-right: toRem(15);
     font-size: toRem(16);
     color: $mainOrange;
     @media (any-hover: hover){

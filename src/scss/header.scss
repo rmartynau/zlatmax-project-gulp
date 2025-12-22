@@ -23,6 +23,9 @@
         align-items: center;
         gap: 20px;
         min-height: 50px;
+        @media (max-width:$tablet){
+            gap: toRem(30);
+        }
     }
     // .top-header__menu
     &__menu {
@@ -45,7 +48,7 @@
                 }
             }
         }
-        @media (max-width: $mobile){
+        @media (max-width: $tablet){
             &::before {
                 font-size: toRem(35);
             }
@@ -243,11 +246,28 @@
     display: flex;
  }
  // .phones-header__phone
- &__phone {
+  &__phone {
     font-weight: 600;
     white-space: nowrap;
     line-height: math.div(22, 18);
- }
+    &::before {
+        @extend %ic;
+        @extend ._icon-footer-phone;
+        display: none;
+    }
+    @media (max-width:$tablet){
+        font-size: toRem(25);
+    }
+    @media (max-width:$mobileSmall){
+        &::before {
+        display: block;
+        font-size: toRem(32);
+       }
+       span {
+        display: none;
+       }
+    }
+  }
  // .phones-header__arrow
  &__arrow {
     color: #E8AA31;
@@ -256,6 +276,9 @@
     margin: 0px 0px 0px toEm(17, 16);
     &._spoller-active {
         transform: rotate(-180deg);
+    }
+    @media (max-width:$tablet){
+        display: none;
     }
  }
  // .phones-header__list
@@ -275,6 +298,9 @@
             margin-bottom: toEm(8, 18);
         }
     }
+    @media (max-width:$tablet){
+        display: none;
+    }
  }
  // .phones-header__callback
  &__callback {
@@ -283,10 +309,13 @@
     line-height: math.div(22, 18);
     color: #E8AA31;
     @media (any-hover: hover){
-            &:hover{
-                text-decoration: underline;
-            }
+        &:hover{
+            text-decoration: underline;
         }
+    }
+    @media (max-width:$tablet){
+        display: none;
+    }
  }
 }
 .cart-header {
@@ -489,8 +518,8 @@
 	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
-		width: 30px;
-		height: toRem(18);
+		width: 40px;
+		height: toRem(22.5);
         cursor: pointer;
 		z-index: 5;
 		span,

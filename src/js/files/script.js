@@ -34,4 +34,8 @@ function documentActions(e) {
         }
         e.preventDefault();
     }
+    if (targertElement.closest('.menu-top-header__link_catalog')) {
+        document.documentElement.classList.add('catalog-open');
+        e.preventDefault();
+    }
 }

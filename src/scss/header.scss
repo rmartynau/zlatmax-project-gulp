@@ -416,6 +416,21 @@
     }
 }
 .menu-catalog { 
+    @media (max-width:$tablet){
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: $mainDarkColor;
+      padding: toRem(25) toRem(15) toRem(50) toRem(15);
+      transition: left 0.3s ease 0s;
+        .catalog-open & {
+         left: 0;
+         z-index: 6;
+        }
+    }
     // .menu-catalog__list
     &__list {
         display: flex;
@@ -435,7 +450,25 @@
         display: flex;       
         position: relative;
         transition: color 0.3s ease 0s;
-        @media (min-width:$tablet){
+        &[data-parent] {
+            &::before {
+                @extend %ic;
+                @extend ._icon-arrow-bottom;
+                display: none;
+                @media (max-width: $tablet){
+                    transform: rotate(-90deg);
+                    display: block;
+                    font-size: toRem(10);
+                }
+            }
+           @media (max-width: $tablet) {
+              display: flex;
+              width: 100%;
+              flex-direction: row-reverse;
+              justify-content: space-between;
+            }
+        }
+        @media (min-width: $tablet){
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -455,24 +488,27 @@
             transition: all 0.3s ease 0s;
         }
         @media (any-hover: hover){
-         &:hover {
-            color: $mainOrange;
-            &::after {
-              opacity: 1;
-              visibility: visible;
+          &:hover {
+             color: $mainOrange;
+                &::after {
+                 opacity: 1;
+                 visibility: visible;
+                }
             }
         }
-        &._sub-menu-active {
-            color: $mainOrange;
-            &::after {
-              opacity: 1;
-              visibility: visible;
-            }
+        @media (min-width: $tablet){
+            &._sub-menu-active {
+              color: $mainOrange;
+                &::after {
+                 opacity: 1;
+                 visibility: visible;
+                }
+            }  
         }
+        
         @media (max-width: $tablet){
           @include adaptiveValue("font-size", 30, 20, 1, 992, 320);
         }
-   }
     }
     // .menu-catalog__sub-menu
     &__sub-menu{
@@ -484,54 +520,85 @@
     &__back {
         display: none;
         @media (max-width:$tablet){
-            display: inline-block;
+            display: inline-flex;
             align-items: center;
-        }
-    }
-    @media (max-width:$tablet){
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: $mainDarkColor;
-        padding: toRem(100) toRem(15) toRem(50) toRem(15);
-        transition: left 0.3s ease 0s;
-        .catalog-open & {
-            left: 0;
-            z-index: 6;
+            @include adaptiveValue("font-size", 30, 20, 1, 992, 320);
+            &:not(:last-child) {
+               margin-bottom: toEm(65, 30);
+            }
+            &::before{
+                margin: toRem(0) toEm(13, 30) toRem(0) toRem(0);
+            }
         }
     }
 }
-
 .sub-menu-catalog {
+    @media (max-width:$tablet){
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: $mainDarkColor;
+      padding: toRem(25) toRem(15) toRem(50) toRem(15);
+      transition: left 0.3s ease 0s;
+        .sub-menu-open & {
+          display: block;
+          left: 0;
+          z-index: 6;
+        }
+    }
+   &__back {
+       display: none;
+       @media (max-width:$tablet){
+           display: inline-block;
+           align-items: center;
+           @include adaptiveValue("font-size", 30, 20, 1, 992, 320);
+           &:not(:last-child) {
+              margin-bottom: toEm(65, 30);
+           }
+           &::before{
+               margin: toRem(0) toEm(13, 30) toRem(0) toRem(0);
+           }
+       }
+   }
    // .sub-menu-catalog__block
-   &__block {
+ &__block {
     display: none;
     @for $var from 1 to 6 {
-        &_#{$var} {
-            grid-template-columns: repeat($var, minmax(auto, toRem(320)));
-        }
+      &_#{$var} {
+        grid-template-columns: repeat($var, minmax(auto, toRem(320)));
+      }
     }
     &._sub-menu-open {
         display: grid;
+        @media (max-width: $tablet){
+         display: block;
+        }
     }
-   }
-   &__container {
-    padding: 0px toRem(10);
-   }
+ }
+ &__container {
+ padding: 0px toRem(10);
+ }
  // .sub-menu-catalog__category 
  &__category {
   font-size: toRem(16);
   line-height: math.div(20, 16);
-  font-weight: 700;
-  padding: toRem(30) toRem(15) toRem(30) 0;
-  @media (any-hover: hover){
-    &:hover{
-       text-decoration: underline;
+    @media (any-hover: hover){
+        &:hover{
+         text-decoration: underline;
+        }
     }
-   }
+   @media (min-width: $tablet){
+     font-weight: 700;
+     padding: toRem(30) toRem(15) toRem(30) 0; 
+    }
+    @media (max-width:$tablet){
+        &:not(:last-child) {
+          margin-bottom: toEm(25, 16);
+        }
+    }
  }
  // // .sub-menu-catalog__list
  &__list {
@@ -541,6 +608,9 @@
    padding: toRem(30) toRem(15) toRem(30) 0;
    border-top: 1px solid rgba(255, 255, 255, 0.3);
    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+   @media (max-width:$tablet){
+      display: none;
+   }
  }
  // .sub-menu-catalog__item 
  &__item {
@@ -556,9 +626,15 @@
     }
    }
  }
+ &__link-category {
+    @include adaptiveValue("font-size", 30, 20, 1, 992, 320);
+ }
  // .sub-menu-catalog__footer
  &__footer {
     padding: toRem(30) toRem(15) toRem(30) 0;
+    @media (max-width:$tablet){
+         display: none; 
+    }
  }
  // .sub-menu-catalog__all 
  &__all {

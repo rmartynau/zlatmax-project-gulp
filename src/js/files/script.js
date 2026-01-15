@@ -1,7 +1,7 @@
 // Підключення функціоналу "Чертоги Фрілансера"
-import { isMobile } from "./functions.js";
+// import { isMobile } from "./functions.js";
 // Підключення списку активних модулів
-import { flsModules } from "./modules.js";
+// import { flsModules } from "./modules.js";
 
 document.addEventListener("click", documentActions);
 
@@ -18,7 +18,6 @@ function documentActions(e) {
     if (targertElement.closest('[data-parent]')) {
         const subMenuId = targertElement.dataset.parent ? targertElement.dataset.parent : null;
         const subMenu = document.querySelector(`[data-submenu="${subMenuId}"]`);
-        const catalogMenu = document.querySelector('.catalog-header');
         if (subMenu) {
             const activeLink = document.querySelector('._sub-menu-active');
             const activeBlock = document.querySelector('._sub-menu-open');
@@ -26,9 +25,12 @@ function documentActions(e) {
             if (activeLink && activeLink !== targertElement) {
                 activeLink.classList.remove('_sub-menu-active');
                 activeBlock.classList.remove('_sub-menu-open');
+                document.documentElement.classList.remove('sub-menu-open');
             }
+            document.documentElement.classList.toggle('sub-menu-open');
             targertElement.classList.toggle('_sub-menu-active');
             subMenu.classList.toggle('_sub-menu-open');
+
         } else {
             console.log('Ой ой, нет такого подменю :(');
         }
@@ -36,6 +38,18 @@ function documentActions(e) {
     }
     if (targertElement.closest('.menu-top-header__link_catalog')) {
         document.documentElement.classList.add('catalog-open');
+        e.preventDefault();
+    }
+    if (targertElement.closest('.menu-catalog__back')) {
+        document.documentElement.classList.remove('catalog-open');
+        document.querySelector('._sub-menu-active') ? document.querySelector('._sub-menu-active').classList.remove('_sub-menu-active') : null;
+        document.querySelector('._sub-menu-open') ? document.querySelector('._sub-menu-open').classList.remove('_sub-menu-open') : null;
+        e.preventDefault();
+    }
+    if (targertElement.closest('.sub-menu-catalog__back')) {
+        document.documentElement.classList.remove('sub-menu-open');
+        document.querySelector('._sub-menu-active') ? document.querySelector('._sub-menu-active').classList.remove('_sub-menu-active') : null;
+        document.querySelector('._sub-menu-open') ? document.querySelector('._sub-menu-open').classList.remove('_sub-menu-open') : null;
         e.preventDefault();
     }
 }

@@ -165,3 +165,12 @@ body {
 
 // Підключення стилів окремих сторінок
 @import "home";
+
+.page {
+ // .page_home
+	&_home {
+	}
+ // .page__main-block
+	&__main-block {
+	}
+}

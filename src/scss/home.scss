@@ -15,6 +15,8 @@
 	}
 	// .main-block__slide
 	&__slide {
+		// margin: 0px toRem(-30);
+        // padding: 0px toRem(30);
 	}
 	// .main-block__media
 	&__media {
@@ -22,6 +24,34 @@
 	// .main-block__advantages
 	&__advantages {
 	}
+	// .main-block__controll 
+	&__controll {
+ }
+}
+.controll-main-block { 
+	display: flex;
+	align-items: center;
+	gap: toRem(20);
+ // .controll-main-block__dotts 
+ &__dotts {
+
+ } 
+ // .controll-main-block__fraction 
+ &__fraction {
+ }
+}
+.fraction-controll {
+// .fraction-controll__current
+&__current {
+}
+// .fraction-controll__all
+&__all {
+}
+}
+
+.swiper {
+//    margin: 0px toRem(-30);
+//    padding: 0px toRem(30);
 }
 .slide-main-block {
  // .slide-main-block__content

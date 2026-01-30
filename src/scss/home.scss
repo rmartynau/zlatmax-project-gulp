@@ -1,5 +1,4 @@
 .main-block {
-	
 	background: url("@img/mainpage/main-block/bg.jpg") center / cover no-repeat;
 	@include adaptiveValue("padding-top", 40, 20);
 	@include adaptiveValue("padding-bottom", 60, 20);
@@ -14,13 +13,11 @@
 	}
 	// .main-block__slider
 	&__slider {
-		
 		margin: 0px toRem(-30);
         padding: 0px toRem(30);
 	}
 	// .main-block__swiper
     &__wrapper {
-		
 		&:not(:last-child) {
 			margin-bottom: toRem(30);
 		}
@@ -36,30 +33,76 @@
  }
 }
 .controll-main-block { 
-	display: flex;
+	display: inline-grid;
+    grid-auto-flow: column;
 	align-items: center;
 	gap: toRem(20);
  // .controll-main-block__dotts 
  &__dotts {
-   display: flex;
+   display: inline-grid;
+   grid-auto-flow: column;
    gap: toRem(15);
+   transform: translate(0px, 10%);
    .swiper-pagination-bullet {
-	height: 2px;
-	flex: 0 0 15px;
-	background-color: #fff;
-   }
+	 cursor: pointer;
+	  height: toRem(30);
+	  width: toRem(18);
+	  position: relative;
+	  transition: all 0.3s ease 0s;
+	    &::after{
+		  content:'';
+		  height: toRem(2);
+		  position: absolute;
+		  width: 100%;
+		  top: 50%;
+		  transform: translate(0px, -50%);
+	      background-color: #fff;
+	    }
+		&::before{
+			content:'';
+			background-color: $mainOrange;
+			width: toRem(10);
+			height: toRem(10);
+			top: 50%;
+			left: 0;
+			border-radius: 50%;
+			transform: translate(0px, -50%);
+			position: absolute;
+			opacity: 0;
+		}
+    }
+	.swiper-pagination-bullet-active {
+		width: toRem(30);
+		&::after{
+			background-color: $mainOrange;
+		}
+		&::before{
+			content:'';
+			opacity: 1;
+			transition: left 3s linear 0s;
+			left: toRem(20);
+		}
+	}
  } 
  // .controll-main-block__fraction 
  &__fraction {
  }
 }
 .fraction-controll {
-// .fraction-controll__current
-&__current {
-}
-// .fraction-controll__all
-&__all {
-}
+   display: flex;
+   color: #fff;
+   align-items: flex-end;
+   font-weight: 600;
+   letter-spacing: 0.2em;
+   // .fraction-controll__current
+   &__current {
+	color: $mainOrange;
+	font-size: toRem(24);
+   }
+   // .fraction-controll__all
+   &__all {
+	font-size: toRem(18);
+   }
 }
 
 .slide-main-block {

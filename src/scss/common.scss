@@ -1,1 +1,69 @@
-// Заголовки, загальні БЕМ блоки та інше...
+.products-slider {
+ // .products-slider__container    
+    &__container {
+    }    
+ // .products-slider__header    
+    &__header {
+    }    
+ // .products-slider__title    
+    &__title {
+    }    
+ // .products-slider__more    
+    &__more {
+    }    
+ // .products-slider__slider    
+    &__slider {
+    }    
+ // .products-slider__wrapper    
+    &__wrapper {
+    }    
+ // .products-slider__slide    
+    &__slide {
+    }
+}
+.product-card {
+ // .product-card__image-ibg 
+    &__image-ibg { 
+    // .product-card__image-ibg_contain 
+    	&_contain {
+    	}
+    } 
+ // .product-card__body 
+    &__body {
+    } 
+ // .product-card__title 
+    &__title {
+    } 
+ // .product-card__link-title 
+    &__link-title {
+    } 
+ // .product-card__info 
+    &__info {
+    } 
+ // .product-card__rating 
+    &__rating {
+    } 
+ // .product-card__footer 
+    &__footer {
+    } 
+ // .product-card__price 
+    &__price {
+    } 
+ // .product-card__compare 
+    &__compare {
+    } 
+ // .product-card__faforite 
+    &__faforite {
+    } 
+ // .product-card__cart 
+    &__cart {
+    }
+}
+.info-product-card {
+ // .info-product-card__size
+    &__size {
+    }
+ // .info-product-card__materials
+    &__materials {
+    }
+}

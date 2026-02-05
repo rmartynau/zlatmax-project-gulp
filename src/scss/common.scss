@@ -4,32 +4,76 @@
     }    
  // .products-slider__header    
     &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 50, 30);
+      }
     }    
  // .products-slider__title    
     &__title {
+      letter-spacing: toEm(0.5);
+      font-size: toRem(30);
+      font-weight: 700;
+      line-height: math.div(46, 30);
     }    
  // .products-slider__more    
     &__more {
-    }    
+      color: rgba(20, 20, 20, 0.58);
+      transition: color 0.3s ease 0s;
+      font-weight: 600;
+      font-size: toRem(18);
+      display: inline-flex;
+      align-items: center;
+      gap: toEm(15, 18);
+      &::after{
+         @extend %ic;
+         content: "\e900";
+         font-size: toEm(7, 18);
+         transform: rotate(-90deg);
+         color: $mainOrange;
+      }
+      @media (any-hover: hover){
+         &:hover{
+            color: rgba(20, 20, 20, 1);
+         }
+      }
+   }    
  // .products-slider__slider    
-    &__slider {
-    }    
+   &__slider {
+      padding: toRem(15);
+      margin: 0px toRem(-15);
+   }    
  // .products-slider__wrapper    
     &__wrapper {
-    }    
+   }    
  // .products-slider__slide    
     &__slide {
-    }
+   }
 }
 .product-card {
+   display: grid;
+   grid-template-rows: auto 1fr;
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+   transition: box-shadow 0.3s ease 0s;
+   @media (any-hover: hover){
+      &:hover{
+         box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
+      }
+   }
  // .product-card__image-ibg 
     &__image-ibg { 
+      padding-bottom: percent(295, 375);
     // .product-card__image-ibg_contain 
     	&_contain {
     	}
     } 
  // .product-card__body 
     &__body {
+      padding: toRem(20);
+      // display: flex;
+      // flex-direction: column;
     } 
  // .product-card__title 
     &__title {
@@ -52,8 +96,8 @@
  // .product-card__compare 
     &__compare {
     } 
- // .product-card__faforite 
-    &__faforite {
+ // .product-card__favorite 
+    &__favorite {
     } 
  // .product-card__cart 
     &__cart {

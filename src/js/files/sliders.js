@@ -119,7 +119,7 @@ function initSliders() {
 		new Swiper('.products-slider__slider', { // Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
-			modules: [Navigation, Pagination],
+			modules: [Navigation, Pagination, Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 4,
@@ -137,11 +137,15 @@ function initSliders() {
 			
 			// Ефекти
 			// effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
 
 			// Пагінація
 			
 			pagination: {
-				el: '.products-slider__swiper-pagination',
+				el: '.products-slider__dotts',
 				clickable: true,
 			},
 			

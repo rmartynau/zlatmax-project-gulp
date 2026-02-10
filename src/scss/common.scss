@@ -58,10 +58,13 @@
    &__dotts {
    display: grid;
    grid-auto-flow: column;
-   gap: toRem(15);
+  
    transform: translate(0px, 10%);
    justify-content: center;
+   margin: 0px auto;
+   overflow: hidden;
    .swiper-pagination-bullet {
+      margin: 0px toRem(7.5);
 	 cursor: pointer;
 	  height: toRem(30);
 	  width: toRem(18);
@@ -90,7 +93,7 @@
 		}
     }
 	.swiper-pagination-bullet-active {
-		width: toRem(30);
+		
 		&::after{
 			background-color: $mainOrange;
 		}
@@ -98,7 +101,7 @@
 			content:'';
 			opacity: 1;
 			transition: left 3s linear 0s;
-			left: toRem(20);
+			left: toRem(8);
 		}
 	}
  } 

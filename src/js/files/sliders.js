@@ -147,6 +147,7 @@ function initSliders() {
 			pagination: {
 				el: '.products-slider__dotts',
 				clickable: true,
+				dynamicBullets: true
 			},
 			
 
@@ -163,12 +164,12 @@ function initSliders() {
 			// 	prevEl: '.swiper-button-prev',
 			// 	nextEl: '.swiper-button-next',
 			// },
-			/*
+			
 			// Брейкпоінти
 			breakpoints: {
-				640: {
+				320: {
 					slidesPerView: 1,
-					spaceBetween: 0,
+					spaceBetween: 20,
 					autoHeight: true,
 				},
 				768: {
@@ -184,10 +185,12 @@ function initSliders() {
 					spaceBetween: 30,
 				},
 			},
-			*/
+			
 			// Події
 			on: {
-                
+                init: function (swiper) {
+
+				}
 			}
 		});
 	}

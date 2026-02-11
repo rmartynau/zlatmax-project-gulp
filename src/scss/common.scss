@@ -1,14 +1,17 @@
 .products-slider {
  // .products-slider__container    
-    &__container {
-    }    
+   &__container {
+   }    
  // .products-slider__header    
     &__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       &:not(:last-child) {
          @include adaptiveValue("margin-bottom", 50, 30);
+      }
+      @media (min-width:$mobile){
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: toRem(20);
       }
     }    
  // .products-slider__title    
@@ -48,7 +51,7 @@
  // .products-slider__wrapper    
    &__wrapper {
       &:not(:last-child) {
-         margin-bottom: toRem(50);
+         @include adaptiveValue("margin-bottom", 50, 30);
       }
    }    
  // .products-slider__slide    
@@ -56,62 +59,17 @@
    }
  // .products-slider__dotts
    &__dotts {
-   display: grid;
-   grid-auto-flow: column;
-  
-   transform: translate(0px, 10%);
-   justify-content: center;
-   margin: 0px auto;
-   overflow: hidden;
-   .swiper-pagination-bullet {
-      margin: 0px toRem(7.5);
-	 cursor: pointer;
-	  height: toRem(30);
-	  width: toRem(18);
-	  position: relative;
-	  transition: all 0.3s ease 0s;
-	    &::after{
-		  content:'';
-		  height: toRem(2);
-		  position: absolute;
-		  width: 100%;
-		  top: 50%;
-		  transform: translate(0px, -50%);
-	      background-color: #898989;
-	    }
-		&::before{
-			content:'';
-			background-color: $mainOrange;
-			width: toRem(10);
-			height: toRem(10);
-			top: 50%;
-			left: 0;
-			border-radius: 50%;
-			transform: translate(0px, -50%);
-			position: absolute;
-			opacity: 0;
-		}
-    }
-	.swiper-pagination-bullet-active {
-		
-		&::after{
-			background-color: $mainOrange;
-		}
-		&::before{
-			content:'';
-			opacity: 1;
-			transition: left 3s linear 0s;
-			left: toRem(8);
-		}
-	}
+ 
  } 
 }
 .product-card {
+   background-color: #fff;
    display: grid;
    height: 100%;
    grid-template-rows: auto 1fr;
    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
    transition: box-shadow 0.3s ease 0s;
+   position: relative;
    @media (any-hover: hover){
       &:hover{
          box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
@@ -127,6 +85,7 @@
  // .product-card__item-image-ibg
    &__item-image-ibg {
       display: block;
+      // padding-bottom: percent(240, 270);
    }
  // .product-card__body 
     &__body {
@@ -143,7 +102,6 @@
       &:not(:last-child) {
 			margin-bottom: toEm(10, 20);
 		}
-     
    } 
  // .product-card__link-title 
    &__link-title {
@@ -217,6 +175,157 @@
     &__size {
     }
  // .info-product-card__materials
-    &__materials {
+   &__materials {
+     text-align: right;
+   }
+}
+//========================================================================================================================================================
+.dotts {
+   display: grid;
+   grid-auto-flow: column;
+   justify-content: center;
+   margin: 0px auto;
+   overflow: hidden;
+   .swiper-pagination-bullet {
+      margin: 0px toRem(7.5);
+	 cursor: pointer;
+	  height: toRem(30);
+	  width: toRem(18);
+	  position: relative;
+	  transition: all 0.3s ease 0s;
+	    &::after{
+		  content:'';
+		  height: toRem(2);
+		  position: absolute;
+		  width: 100%;
+		  top: 50%;
+		  transform: translate(0px, -50%);
+	      background-color: #898989;
+	    }
+		&::before{
+			content:'';
+			background-color: $mainOrange;
+			width: toRem(10);
+			height: toRem(10);
+			top: 50%;
+			left: 0;
+			border-radius: 50%;
+			transform: translate(0px, -50%);
+			position: absolute;
+			opacity: 0;
+		}
     }
+	.swiper-pagination-bullet-active {
+		
+		&::after{
+			background-color: $mainOrange;
+		}
+		&::before{
+			content:'';
+			opacity: 1;
+			transition: left 3s linear 0s;
+			left: toRem(8);
+		}
+	}
+}
+//========================================================================================================================================================
+.products-new {  
+   padding: toRem(45) 0px 0px 0px;
+   position: relative;
+   background: url('@img/new-product/bg.jpg') bottom / cover no-repeat;
+   &::before{
+      content:'';
+      background-color: #fff;
+      height: 46px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: percent(1030, 1920);
+   }
+   // .products-new__inner 
+ &__inner {
+   @include adaptiveValue("padding-top", 55, 20);
+   @include adaptiveValue("padding-bottom", 55, 20);
+ }
+ // .products-new__container
+   &__container {
+      display: grid;
+      row-gap: 40px;
+      @media (min-width: $tablet){
+         grid-template-columns: toRem(400) 1fr;
+         align-items: start
+      }
+   }
+   // .products-new__body
+   &__body {
+      @include adaptiveValue("padding-right", 70, 30, 1630, 992, 2);
+   }
+ // .products-new__section 
+   &__section {
+      position: relative;
+      z-index: 2;
+   } 
+ // .products-new__title
+   &__title {
+      font-weight: bold;
+      font-size: toRem(30);
+      color: #fff;
+      line-height: math.div(46, 30);
+      &:not(:last-child) {
+			margin-bottom: toEm(30, 30);
+		}
+   }
+ // .products-new__text
+   &__text {
+      font-size: toRem(18);
+		line-height: math.div(27, 18);
+		letter-spacing: 0.03em;
+		color: rgba(255, 255, 255, 0.7);
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 60, 20);
+      }
+   } 
+ // .products-new__link 
+   &__link {
+   } 
+// .products-new__content
+   &__content {
+      min-width: 0;
+      @media (min-width: $tablet){
+         padding: toRem(37) 0px 0px 0px; 
+      }
+   }
+ // .products-new__slider 
+   &__slider {
+   } 
+ // .products-new__wrapper 
+   &__wrapper {
+     &:not(:last-child) {
+       @include adaptiveValue("margin-bottom", 50, 20);
+     }
+   } 
+ // .products-new__slide 
+  &__slide {
+  }
+}
+//========================================================================================================================================================
+.link-arrow {
+   display: inline-flex;
+   flex-direction: row-reverse;
+   align-items: center;
+   color: $mainOrange;
+   font-weight: 600;
+   font-size: toRem(20);
+   &::before{
+      margin: 0px 0 0px toEm(20, 20);
+      transform: rotate(-90deg);
+      font-size: toRem(8);
+   }
+   @media (any-hover: hover){
+      &:hover{
+         span {
+            text-decoration: underline;
+         }
+      }
+   }
 }

@@ -169,8 +169,7 @@ function initSliders() {
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
-					spaceBetween: 20,
-					autoHeight: true,
+					spaceBetween: 10,
 				},
 				768: {
 					slidesPerView: 2,
@@ -182,6 +181,85 @@ function initSliders() {
 				},
 				1268: {
 					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			
+			// Події
+			on: {
+                init: function (swiper) {
+
+				}
+			}
+		});
+	}
+	if (document.querySelector('.products-new')) { // Вказуємо склас потрібного слайдера
+		// Створюємо слайдер
+		new Swiper('.products-new__slider', { // Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Navigation, Pagination, Autoplay],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 3,
+			spaceBetween: 30,
+			parallax: true,
+			//autoHeight: true,
+			speed: 800,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			
+			// Ефекти
+			// effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+
+			// Пагінація
+			
+			pagination: {
+				el: '.products-new__dotts',
+				clickable: true,
+				dynamicBullets: true
+			},
+			
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "вліво/вправо"
+			// navigation: {
+			// 	prevEl: '.swiper-button-prev',
+			// 	nextEl: '.swiper-button-next',
+			// },
+			
+			// Брейкпоінти
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 10,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				1330: {
+					slidesPerView: 3,
 					spaceBetween: 30,
 				},
 			},

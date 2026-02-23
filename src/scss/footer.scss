@@ -21,8 +21,8 @@
  &__title {
     text-align: center;
     font-weight: bold;
-    font-size: toRem(30);
     color: $mainOrange;
+    @include adaptiveValue("font-size", 30, 24);
     line-height: math.div(46, 30);
     &:not(:last-child) {
         margin-bottom: toEm(30, 30);
@@ -31,11 +31,12 @@
  // .text-footer__text 
  &__text {
     color: #fff;
-    font-size: toRem(18);
+    @include adaptiveValue("font-size", 18, 16);
     line-height: math.div(27, 18);
  }
 }
 .body-footer {
+   background-color: $mainDarkColor;
 }
 
 //====================================================================================================

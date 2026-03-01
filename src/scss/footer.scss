@@ -59,21 +59,36 @@
    &__spollers {
    }
 }
-.spollers-item-footer {
- // .spollers-item-footer__item 
+.spoller-item-footer {
+ // .spoller-item-footer__item 
    &__item {
    } 
- // .spollers-item-footer__title
+ // .spoller-item-footer__title
    &__title {
+      list-style: none;
       text-transform: uppercase;
       color: #fff;
       font-weight: 600;
       line-height: math.div(22, 18);
     }
- // .spollers-item-footer__body 
+ // .spoller-item-footer__body 
   &__body {
     padding-top: toEm(30, 18);
   }
+  // .spoller-item-footer__text
+	&__text {
+		// max-width: toRem(320);
+		// line-height: math.div(27, 18);
+		// color: #fff;
+		// a {
+		// 	color: $mainOrange;
+		// 	@media (any-hover: hover) {
+		// 		&:hover {
+		// 			text-decoration: underline;
+		// 		}
+		// 	}
+		// }
+	}
 }
 .spollers {
  // .spollers__title 

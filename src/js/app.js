@@ -117,7 +117,7 @@ flsForms.formFieldsInit({
 
 /* Надсилання форми */
 /* Документація: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formSubmit();
+flsForms.formSubmit(true);
 
 /* Модуль форми "кількість" */
 flsForms.formQuantity();

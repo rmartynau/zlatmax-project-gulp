@@ -1,6 +1,6 @@
 //====================================================================================================
 .footer {
-   background-color: $mainDarkColor;
+  background-color: $mainDarkColor;
  // .footer_text 
  &_text {
  } 
@@ -125,7 +125,7 @@
   } 
  // .menu-footer__item 
    &__item {
-    line-height: 1.5;
+      line-height: 1.5;
       display: flex;
       color: rgba(255, 255, 255, 0.8);
       &:not(:last-child) {

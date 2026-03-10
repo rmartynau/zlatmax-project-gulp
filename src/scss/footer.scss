@@ -41,7 +41,7 @@
   @include adaptiveValue("padding-top", 100, 40);
   @include adaptiveValue("padding-bottom", 50, 40);
   display: grid;
-  @include adaptiveValue("gap", 35, 15);
+  @include adaptiveValue("gap", 35, 25);
  // .body-footer__row 
    &__row {
       display: grid;
@@ -55,6 +55,27 @@
    } 
  // .body-footer__item 
   &__item {
+  }
+ // .body-footer__bottom
+  &__bottom {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: toRem(14);
+    line-height: math.div(27, 14);
+    @media (min-width: toEm(1200)){
+      display: flex;
+      justify-content: space-between;
+      gap: toRem(20);
+    }
+  }
+ // .body-footer__rules
+  &__rules {
+    max-width: toRem(820);
+  }
+ // .body-footer__copy
+  &__copy {
+    span {
+      white-space: nowrap;
+    }
   }
 }
 .item-footer {

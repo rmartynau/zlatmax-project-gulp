@@ -1,0 +1,28 @@
+.catalog {
+ // .catalog__container
+   &__container {
+   }
+ // .catalog__body
+   &__body {
+    display: grid;
+    grid-template-columns: toRem(375) 1fr;
+    gap: toRem(30);
+   }
+ // .catalog__filter
+   &__filter {
+   }
+ // .catalog__content
+   &__content {
+   }
+ // .catalog__control 
+    &__control {
+     display: flex;
+     justify-content: flex-end;
+        &:not(:last-child) {
+          margin-bottom: toRem(20);
+        }
+    } 
+ // .catalog__products 
+   &__products {
+   }
+}

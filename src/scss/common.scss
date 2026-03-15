@@ -329,3 +329,46 @@
       }
    }
 }
+//========================================================================================================================================================
+.breadcrumbs {
+   white-space: nowrap;
+   overflow: auto;
+   height: toRem(22);
+ // .breadcrumbs__list 
+   &__list {
+    display: flex;
+     &:not(:last-child) {
+       margin-bottom: toRem(30);
+      }
+   } 
+ // .breadcrumbs__item 
+   &__item {
+   } 
+ // .breadcrumbs__link 
+   &__link {
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    &::after{
+       content:'\e900';
+       @extend %ic;
+       transform: rotate(-90deg);
+       font-size: toRem(6);
+       margin: 0px toEm(10, 6);
+       
+      }
+   } 
+ // .breadcrumbs__current 
+   &__current {
+    color: $mainOrange;
+   }
+}
+//========================================================================================================================================================
+.title {
+   font-weight: 700;
+   font-size: toRem(24);
+   line-height: math.div(29, 24);
+   &:not(:last-child) {
+      margin-bottom: toEm(25, 24);
+   }
+}

@@ -165,10 +165,19 @@ body {
 
 // Підключення стилів окремих сторінок
 @import "home";
+@import "catalog";
 
 .page {
  // .page_home
 	&_home {
+	}
+ // .page_inner
+	&_inner {
+		padding-top: toRem(30);
+	}
+ // .page__header
+    &__header {
+		margin-bottom: toRem(30);
 	}
  // .page__main-block
 	&__main-block {

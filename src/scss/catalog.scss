@@ -1,4 +1,5 @@
 .catalog {
+  @include adaptiveValue("margin-bottom", 120, 40);
  // .catalog__container
    &__container {
    }
@@ -18,11 +19,23 @@
     &__control {
      display: flex;
      justify-content: flex-end;
-        &:not(:last-child) {
-          margin-bottom: toRem(20);
-        }
+      &:not(:last-child) {
+        margin-bottom: toRem(20);
+      }
     } 
  // .catalog__products 
-   &__products {
-   }
+  &__products {
+    display: grid;
+    gap: toRem(30);
+    grid-template-columns: repeat(auto-fill, minmax(toRem(290), toRem(375)));
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 30);
+    }
+  }
+ // .catalog__footer
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(20);
+  }
 }

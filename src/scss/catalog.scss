@@ -110,3 +110,35 @@
   &__range {
   }
 }
+.item-filter-catalog {
+ // .item-filter-catalog__title 
+  &__title {
+    background-color: $mainDarkColor;
+    width: 100%;
+    color: #fff;
+    padding: toRem(13) toRem(30);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    &::before{
+      color: $mainOrange;
+      font-size: toRem(8);
+      transform: rotate(-180deg);
+      transition: transform 0.3s ease 0s;
+    }
+    &._spoller-active {
+      &::before{
+        transform: rotate(0deg);
+      }
+    }
+  } 
+ // .item-filter-catalog__body 
+  &__body {
+    padding: toRem(30);
+  }
+  // .item-filter-catalog__checkbox
+  &__checkbox {
+    margin-bottom: toRem(22);
+  }
+}

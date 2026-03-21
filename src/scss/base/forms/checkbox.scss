@@ -1,9 +1,7 @@
 .checkbox {
-	@include adaptiveValue("padding-top", 30, 20);
-    @include adaptiveValue("padding-bottom", 30, 20);
 	position: relative;
 	&:not(:last-child) {
-		margin-bottom: em(5);
+		margin-bottom: toEm(5);
 	}
 	.form__error {
       position: absolute;

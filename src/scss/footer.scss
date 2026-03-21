@@ -231,4 +231,9 @@
       transform: rotate(-90deg);
     }
   }
+ // .footer-subscribe__checkbox 
+  &__checkbox {
+    @include adaptiveValue("padding-top", 30, 20);
+    @include adaptiveValue("padding-bottom", 30, 20);
+  }
 }

@@ -389,6 +389,7 @@
    justify-content: flex-end;
    align-items: center;
    gap: toRem(30);
+   @include adaptiveValue("gap", 30, 15);
  // .pagging__arrow
    &__arrow {
       color: $mainOrange;;

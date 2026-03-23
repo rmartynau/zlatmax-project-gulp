@@ -7,8 +7,8 @@
   }
 }
 .main-product {
-    display: grid;
-    grid-template-columns: percent(785, 1600) 1fr;
+  display: grid;
+  grid-template-columns: percent(785, 1600) 1fr;
  // .main-product__images 
   &__images {
     padding: 0px toRem(30) 0px 0px;
@@ -23,7 +23,7 @@
   &__wrapper {
    
   } 
-// .images-product__slide 
+ // .images-product__slide 
   &__slide {
     padding-bottom: percent(577, 754);
   } 

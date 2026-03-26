@@ -320,6 +320,15 @@ function initSliders() {
             slidesPerView: 1,
             spaceBetween: 30,
 			speed: 800,
+			// breakpoints: {
+			//     992: {
+			//     	slidesPerView: 3,
+			//     },
+			//     1330: {
+			//     	slidesPerView: 4,
+			//     	spaceBetween: 16,
+			//     },
+			// },
 			on: {
                 init: function (swiper) {
 				}

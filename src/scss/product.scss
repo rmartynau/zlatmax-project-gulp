@@ -8,37 +8,35 @@
 }
 .main-product {
   display: grid;
-  grid-template-columns: percent(785, 1600) 1fr;
+  align-items: start;
+  @include adaptiveValue("margin-bottom", 120, 40);
  // .main-product__images 
   &__images {
-    padding: 0px toRem(30) 0px 0px;
+    @media (min-width:$tablet){
+      padding: 0px toRem(30) 0px 0px;
+    }
+  }
+  @media (min-width:$tablet){
+    grid-template-columns: percent(785, 1600) 1fr;
   }
 }
 .images-product { 
+  display: grid;
+  gap: toRem(16);
  // .images-product__slider 
   &__slider {
-   
   } 
  // .images-product__wrapper 
   &__wrapper {
-   
   } 
  // .images-product__slide 
   &__slide {
     aspect-ratio: 754 / 577;
-    padding-bottom: toRem(577, 754);
+    // padding-bottom: toRem(577, 754);
   } 
  // .images-product__thumbs 
   &__thumbs {
   }
-}
-.swiper {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
-.ibg {
 }
 .thumbs-images {
  // .thumbs-images__wrapper 
@@ -47,8 +45,147 @@
   } 
  // .thumbs-images__slide 
   &__slide {
+    cursor: pointer;
     aspect-ratio: 195 / 177;
-    padding-bottom: toRem(177, 754);
+    opacity: 0.5;
+    transition: all 0.3s ease 0s;
+    &.swiper-slide-thumb-active {
+      opacity: 1;
+    }
+    // padding-bottom: toRem(177, 754);
     // padding-bottom: percent(177, 754);
   }
 }
+.body-product {
+  background: #FEFEFE;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+  @include adaptiveValue("padding", 30, 15);
+ // .body-product__header 
+  &__header {
+    border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+    padding: 0px 0px toRem(30) 0px;
+  } 
+ // .body-product__table 
+  &__table {
+    border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+    padding: toRem(30) 0px;
+  } 
+ // .body-product__options 
+  &__options {
+    border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+    padding: toRem(30) 0px;
+  } 
+ // .body-product__actions 
+  &__actions {
+    padding: toRem(30) 0px 0 0;
+  }
+}
+.header-product {
+ // .header-product__line 
+  &__line {
+    column-gap: toRem(30);
+    row-gap: toRem(15);
+    display: flex;
+    gap: toRem(30);
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+    @media (max-width:$mobile){
+      flex-wrap: wrap;
+    }
+  } 
+ // .header-product__title 
+  &__title {
+    font-size: toRem(24);
+    font-weight: 700;
+    line-height: math.div(29, 24);
+    flex: 1 1 100%;
+  } 
+ // .header-product__link 
+  &__link {
+    font-size: toRem(24);
+  }
+}
+.table-product {
+  display: grid;
+  gap: toRem(20);
+ // .table-product__label 
+  &__label {
+  } 
+ // .table-product__value 
+  &__value {
+    color: rgba(20, 20, 20, 0.50);
+  }
+  @media (min-width:$mobile){
+    grid-template-columns: toRem(200) 1fr;
+  }
+}
+.options-product {
+  display: grid;
+  gap: toRem(20);
+  @media (min-width:$mobile){
+    grid-template-columns: toRem(200) 1fr;
+  }
+ // .options-product__label 
+  &__label {
+    align-self: center;
+  } 
+ // .options-product__value 
+  &__value {
+  }
+}
+.actions-product {
+ // .actions-product__price 
+  &__price {
+    font-size: toRem(30);
+    font-weight: 700;
+    display: inline-block;
+    line-height: math.div(37, 30);
+    background: url('@img/sru.svg') right no-repeat;
+    padding: 0px toRem(30) 0px 0px;
+    &:not(:last-child) {
+      margin-bottom: toEm(35, 30);
+    }
+  } 
+ // .actions-product__row 
+  &__row {
+    display: flex;
+    gap: toRem(20);
+    @media (max-width:  toEm(1520)){
+      flex-direction: column;
+    }
+  } 
+ // .actions-product__quantity 
+  &__quantity {
+  } 
+ // .actions-product__buttons 
+  &__buttons {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(20);
+    @media (min-width:  toEm(1520)){
+      justify-content: flex-end;
+    }
+  } 
+ // .actions-product__cart 
+  &__cart {
+    span {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      &::before{
+        margin: 0px 0 0px toRem(20);
+      }
+    }
+    @media (max-width:$mobileSmall){
+      width: 100%; 
+    }
+  }
+  &__button {
+    @media (max-width:$mobileSmall){
+      width: 100%; 
+    }
+  }
+}
+

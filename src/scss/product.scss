@@ -237,4 +237,9 @@
       padding: toRem(30) 0;
     }
   }
+  &__reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
